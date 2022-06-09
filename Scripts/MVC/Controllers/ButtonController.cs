@@ -4,19 +4,18 @@ using UnityEngine.UI;
 
 public class ButtonController
 {
-    private Button cusatomButton;
+    private Button customButton;
 
     public ButtonController(Button _customButton)
     {
-        cusatomButton = _customButton;
+        customButton = _customButton;
     }
-
     public void SubscribeButtonToAction(UnityAction _customAction)
     {
-        cusatomButton.onClick.AddListener(_customAction);
+        customButton.onClick.AddListener(_customAction);
     }
     public void Unsubscribe()
     {
-        cusatomButton.onClick.RemoveAllListeners();
+        customButton.onClick.RemoveAllListeners();
     }
 }

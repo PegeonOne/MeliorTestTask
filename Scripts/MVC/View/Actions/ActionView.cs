@@ -7,9 +7,12 @@ public class ActionView
     public UnityAction BackToMainMenu;
     public UnityAction MoreGamesLink;
     public UnityAction QuiteGame;
-
+    public UnityAction Pause;
+    public UnityAction AddArcher;
+    public UnityAction UpgradeArcher;
     private SceneController sceneController;
     private AdditionalGameController additionalGameLogic;
+
     public ActionView(SceneController _sceneController, AdditionalGameController _additionalController)
     {
         sceneController = _sceneController;
@@ -21,5 +24,6 @@ public class ActionView
         BackToMainMenu += sceneController.BackToMenu;
         MoreGamesLink += additionalGameLogic.OpenLinkToGamesList;
         QuiteGame += additionalGameLogic.QuiteTheGame;
+        Pause += additionalGameLogic.SetPause;
     }
 }

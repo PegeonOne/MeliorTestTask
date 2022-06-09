@@ -12,4 +12,15 @@ public class AdditionalGameController
     {
         //SomeActions
     }
+    public void SetPause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }       
+    }
 }
