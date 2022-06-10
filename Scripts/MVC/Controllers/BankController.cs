@@ -13,11 +13,11 @@ public class BankController
     {
         Count = _startCount;
     }
-    public void AddCoins(int _amount)
+    void AddCoins(int _amount)
     {
         Count += _amount;
     }
-    public void RemoveCoins(int _amount)
+    void RemoveCoins(int _amount)
     {
         Count -= _amount;
         if (Count < 0) Count = 0;
@@ -30,6 +30,7 @@ public class BankController
             int amount = _currentArchersCount * GreenArcherPrice;
             if(amount < Count)
             {
+                RemoveCoins(amount);
                 return true;
             }
         }
@@ -38,6 +39,7 @@ public class BankController
             int amount = _currentArchersCount * OrangeArcherPrice;
             if (amount < Count)
             {
+                RemoveCoins(amount);
                 return true;
             }
         }
@@ -53,6 +55,7 @@ public class BankController
         {
             if(Count >= RedArcherPrice)
             {
+                RemoveCoins(RedArcherPrice);
                 return true;
             }
         }
